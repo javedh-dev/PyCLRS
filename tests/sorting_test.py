@@ -1,6 +1,6 @@
 import unittest
 
-from algorithms.sorting import InsertionSort
+from algorithms.sorting import InsertionSort, SelectionSort
 
 
 class InsertionSortTest(unittest.TestCase):
@@ -11,6 +11,16 @@ class InsertionSortTest(unittest.TestCase):
         assert ins_sort.sort(ascending=True), [1, 2, 3, 4, 5, 6, 8, 9]
         assert ins_sort.sort(), [1, 2, 3, 4, 5, 6, 8, 9]
         assert ins_sort.sort(ascending=False), [9, 8, 6, 5, 4, 3, 2, 1]
+
+
+class SelectionSortTest(unittest.TestCase):
+
+    @staticmethod
+    def test_correctness():
+        sel_sort = SelectionSort(array=[3, 2, 9, 4, 5, 8, 6, 1])
+        assert sel_sort.sort(ascending=True), [1, 2, 3, 4, 5, 6, 8, 9]
+        assert sel_sort.sort(), [1, 2, 3, 4, 5, 6, 8, 9]
+        assert sel_sort.sort(ascending=False), [9, 8, 6, 5, 4, 3, 2, 1]
 
 
 if __name__ == '__main__':
